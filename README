@@ -1,0 +1,40 @@
+		FusionInventory agent NetInventory task
+		---------------------------------------
+
+Description
+-----------
+This task allows the agent to extracts various informations from remote hosts
+through SNMP protocol:
+- printer cartridges and counters status
+- router/switch ports status
+- relations between devices and router/switch ports
+
+NetInventory can be applied to any device already present in the inventory,
+provided it is assigned an SNMP description model. This model maps device
+features (ports list, for instance) with SNMP variables identifiers specific
+to a given combination of hardware and firmware. This is typically achieved
+through usage of NetDiscovery task, which automatically identifies known
+devices, and assign them the correct model. As device identification uses
+the same description model than device inventory, failure to identify also
+means there isn't any relevant model for this device.
+
+Dependencies
+------------
+This task requires a FusionInventory agent (minimal version 2.2.0), and can
+only be executed with a GLPI server with FusionInventory plugin.
+
+Additional mandatory perl modules:
+- Net::SNMP
+
+Authors 
+-------
+* David Durieux <d.durieux@siprossii.com>
+* Gonéri Le Bouder <goneri@rulezlan.org>>
+* Guillaume Rousse <guillomovitch@gmail.com>
+
+Copyright 2009-2012 FusionInventory Team
+
+License
+-------
+This software is licensed under the terms of GPLv2+, see LICENSE file for
+details.
